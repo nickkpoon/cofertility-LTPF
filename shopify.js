@@ -1,5 +1,6 @@
 console.log('Script starting...');
 
+//
 (function () {
     var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
 
@@ -101,42 +102,42 @@ window.addEventListener('load', function () {
 
         // Set initial value
         quantityInput.value = '1';
-        console.log('Initial quantity set to:', quantityInput.value);
+        //console.log('Initial quantity set to:', quantityInput.value);
 
         // Minus button click
         minusBtn.addEventListener('click', function () {
             let currentValue = parseInt(quantityInput.value) || 1;
-            console.log('Minus clicked, current value:', currentValue);
+            //console.log('Minus clicked, current value:', currentValue);
             if (currentValue > 1) {
                 currentValue--;
                 quantityInput.value = currentValue;
-                console.log('Value decreased to:', currentValue);
+                //console.log('Value decreased to:', currentValue);
             }
         });
 
         // Plus button click
         plusBtn.addEventListener('click', function () {
             let currentValue = parseInt(quantityInput.value) || 1;
-            console.log('Plus clicked, current value:', currentValue);
+            //console.log('Plus clicked, current value:', currentValue);
             currentValue++;
             quantityInput.value = currentValue;
-            console.log('Value increased to:', currentValue);
+            //console.log('Value increased to:', currentValue);
         });
 
         // Handle direct input changes
         quantityInput.addEventListener('change', function () {
             let value = parseInt(this.value) || 1;
-            console.log('Input changed to:', value);
+            //console.log('Input changed to:', value);
             if (value < 1) value = 1;
             this.value = value;
-            console.log('Final input value:', value);
+            //console.log('Final input value:', value);
         });
 
         // Buy Now button click
         buyNowBtn.addEventListener('click', function () {
-            console.log('Buy Now clicked');
+            //console.log('Buy Now clicked');
             const quantity = parseInt(quantityInput.value) || 1;
-            console.log('Current quantity to set:', quantity);
+            //console.log('Current quantity to set:', quantity);
 
             function findButtonInIframe() {
                 const iframes = document.querySelectorAll('iframe');
@@ -151,11 +152,11 @@ window.addEventListener('load', function () {
 
                         // Try to find quantity input
                         const iframeQuantityInput = iframeDoc.querySelector('input[type="number"], input[name="quantity"]');
-                        console.log('Found quantity input:', iframeQuantityInput);
+                        //console.log('Found quantity input:', iframeQuantityInput);
 
                         if (iframeQuantityInput) {
-                            console.log('Current iframe quantity value:', iframeQuantityInput.value);
-                            console.log('Setting quantity to:', quantity);
+                            //console.log('Current iframe quantity value:', iframeQuantityInput.value);
+                            //console.log('Setting quantity to:', quantity);
 
                             // Update the quantity
                             iframeQuantityInput.value = quantity;
@@ -167,11 +168,11 @@ window.addEventListener('load', function () {
                                 iframeQuantityInput.dispatchEvent(new Event(eventType, { bubbles: true }));
                             });
 
-                            console.log('New iframe quantity value:', iframeQuantityInput.value);
+                            //console.log('New iframe quantity value:', iframeQuantityInput.value);
 
                             // Look for the button
                             const button = iframeDoc.querySelector('.shopify-buy__btn, [data-element="product.button"]');
-                            console.log('Found button:', button);
+                            //console.log('Found button:', button);
 
                             if (button) {
                                 console.log('Clicking button...');

@@ -1,4 +1,6 @@
 
+$(document).ready(function () {
+    /* ------ Custom Code for Testimonial Slider 2 ------ */
 /*  Left/Right Arrow Styling  */
 function leftArrowHide() {
     $("#left-arrow").removeClass('arrow-box').addClass('arrow-end');
@@ -20,6 +22,7 @@ and set the arrows to default styles for Slide 1  */
 $('.navdot').hide();
 rightArrowShow();
 leftArrowHide();
+
 /*  Generate nav dots for each CMS slide  */
 var slideval = 0;
 var cmscount = $("#slides").children().length;
@@ -117,6 +120,8 @@ function updatenav() {
     }
 }
 
+    /* Generate page numbers dynamically for Testimonial Slider 2 */
+
 console.log("Starting page number replacement...");
 
 // Find all page number elements
@@ -142,6 +147,8 @@ console.log("Final page numbers:");
 pageNumberElements.each(function (index) {
     console.log(`Slide ${index + 1}: ${$(this).text()}`);
 });
+
+    /* Autoplay functionality for Testimonial Slider 2 */
 
 // Add auto-click functionality
 console.log('🚀 Setting up auto-click functionality');
@@ -170,3 +177,4 @@ console.log('⏱️ Auto-click interval set:', autoClickInterval);
 
 // Add this at the end of your existing $(document).ready function
 console.log('📜 Auto-click functionality initialized');
+});

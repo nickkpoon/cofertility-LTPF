@@ -1,6 +1,6 @@
 
 $(document).ready(function () {
-    /* ------ Custom Code for Testimonial Slider 2 ------ */
+    /* ------ START CUSTOM CODE: Testimonial Slider 2 ------ */
     /*  Left/Right Arrow Styling  */
     function leftArrowHide() {
         $("#left-arrow").removeClass('arrow-box').addClass('arrow-end');
@@ -157,4 +157,6 @@ $(document).ready(function () {
 
 // Start the interval
     const autoClickInterval = setInterval(autoClick, 10000);
+
+    /* ------ END CUSTOM CODE: Testimonial Slider 2 ------ */
 });

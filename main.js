@@ -121,45 +121,30 @@ function updatenav() {
 }
 
     /* Generate page numbers dynamically for Testimonial Slider 2 */
-
-console.log("Starting page number replacement...");
-
 // Find all page number elements
-const pageNumberElements = $('.page-number-t7-copy');
-console.log("Found page number elements:", pageNumberElements.length);
-
+    const pageNumberElements = $('.page-number-t7-copy');
 // Find total slides
-const totalSlides = $('.collection-item-9').length;
-console.log("Total slides found:", totalSlides);
-
+    const totalSlides = $('.collection-item-9').length;
 // Update each page number
 pageNumberElements.each(function (index) {
     const oldText = $(this).text();
     const newText = `${index + 1}/${totalSlides}`;
-    console.log(`Replacing "${oldText}" with "${newText}" at index ${index}`);
     $(this).text(newText);
 });
 
-console.log("Finished updating page numbers");
-
-// Log final state
-console.log("Final page numbers:");
-pageNumberElements.each(function (index) {
-    console.log(`Slide ${index + 1}: ${$(this).text()}`);
+    // Log final state
+    pageNumberElements.each(function (index) {
 });
 
     /* Autoplay functionality for Testimonial Slider 2 */
 
-// Add auto-click functionality
-console.log('🚀 Setting up auto-click functionality');
+    // Add auto-click functionality
 
 function autoClick() {
     // Only click if we haven't reached the end (slideval > countconverted)
     if (slideval > countconverted) {
-        console.log('📌 Auto-clicking right arrow');
         $("#right-arrow").click();
     } else {
-        console.log('⏹️ Reached end of slides, resetting to beginning');
         // Reset to first slide
         $(".navdot").removeClass("selected");
         $("#slide0").addClass("selected");
@@ -172,9 +157,5 @@ function autoClick() {
 }
 
 // Start the interval
-const autoClickInterval = setInterval(autoClick, 10000);
-console.log('⏱️ Auto-click interval set:', autoClickInterval);
-
-// Add this at the end of your existing $(document).ready function
-console.log('📜 Auto-click functionality initialized');
+    const autoClickInterval = setInterval(autoClick, 10000);
 });
